@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Tournament Management System</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div id="login-screen" class="login-shell" style="display:none;">
+  <div class="login-card">
+    <span class="eyebrow">Admin access</span>
+    <h2 style="margin-top:6px; margin-bottom:20px;">Sign in</h2>
+    <form id="login-form">
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" value="admin@tms.local" required />
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" value="admin123" required />
+      </div>
+      <button class="btn" type="submit" style="width:100%;">Log in</button>
+      <div id="login-error" style="color:var(--loss); font-size:0.82rem; margin-top:10px;"></div>
+    </form>
+    <div class="hint">Default admin: admin@tms.local / admin123</div>
+  </div>
+</div>
+
+<div id="admin-shell" class="admin-shell" style="display:none;">
+  <aside class="admin-sidebar">
+    <div class="brand">
+      <span class="mark" style="font-size:1.5rem;">TMS</span>
+      <div class="sub" style="margin-top:4px;">admin dashboard</div>
+    </div>
+    <nav class="admin-nav" id="admin-nav">
+      <a href="#tournaments" data-section="tournaments">Tournaments</a>
+      <a href="#teams" data-section="teams">Teams &amp; Players</a>
+      <a href="#matches" data-section="matches">Match Schedule</a>
+      <a href="#results" data-section="results">Scores &amp; Results</a>
+      <a href="#points" data-section="points">Points Table</a>
+      <a href="#knockout" data-section="knockout">Knockout &amp; Winner</a>
+    </nav>
+    <div style="padding: 20px;">
+      <a href="/" target="_blank" class="btn subtle" style="width:100%; display:block; text-align:center; margin-bottom:8px;">View site</a>
+      <button id="logout-btn" class="btn subtle" style="width:100%;">Log out</button>
+    </div>
+  </aside>
+  <main class="admin-main" id="admin-main"></main>
+</div>
+
+<div id="toast-root"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
